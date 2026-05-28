@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpliPet. - Sistema de Gestão</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg pt-4">
+        <div class="container px-4">
+             <a class="navbar-brand text-green" href="index.html" >
+                <strong>SimpliPet.</strong><br>
+                <small class="text-muted text-uppercase" style="font-size: 0.6rem; letter-spacing: 1px;">Gestão de Pet
+                    Shop</small>
+            </a>
+            <div class="ms-auto">
+                <ul class="nav nav-pills">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cadastro.html">Cadastrar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="edicao.html">Clientes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="adm.html">Painel</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container px-4 mt-4 mb-5">
+        <div class="mb-4">
+            <h2 class="text-green fw-bold">Tutores & Cachorros</h2>
+            <p class="text-muted">Edite informações, gerencie pets e agende serviços.</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Buscar tutor ou pet...">
+                </div>
+                <div class="list-group">
+                    <button class="list-group-item list-group-item-action active bg-green border-green">
+                        <div class="fw-bold">Ricardo Silva</div>
+                        <small>2 pets • (11) 99876-5432</small>
+                    </button>
+                    <button class="list-group-item list-group-item-action">
+                        <div class="fw-bold">Maria Oliveira</div>
+                        <small>1 pet • (11) 98765-1122</small>
+                    </button>
+                    <button class="list-group-item list-group-item-action">
+                        <div class="fw-bold">Ana Paula Souza</div>
+                        <small>1 pet • (11) 91234-9988</small>
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <div class="card p-4 bg-light border shadow-sm">
+                    <div class="d-flex justify-content-between align-items-start mb-4">
+                        <div>
+                            <span class="badge bg-secondary mb-1">Tutor</span>
+                            <h3 class="text-green fw-bold mb-1">Ricardo Silva</h3>
+                            <p class="text-muted small mb-0">ricardo@email.com • (11) 99876-5432</p>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-sm btn-outline-green" data-bs-toggle="modal"
+                                data-bs-target="#modalEditarTutor">Editar</button>
+                            <button class="btn btn-sm btn-outline-danger">Excluir</button>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5 class="fw-bold mb-3">Cachorros</h5>
+                        <a href="#" class="text-decoration-none small" style="color: #dcb38b;">+ Adicionar Novo Pet</a>
+                    </div>
+                    <p class="text-muted small mb-4">Edite perfis e agende serviços.</p>
+
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="pet-card p-3 d-flex flex-column h-100">
+                                <img src="https://images.unsplash.com/photo-1537151608804-ea2f1ea14a15?auto=format&fit=crop&q=80&w=400"
+                                    alt="Bento" class="pet-img mb-3">
+
+                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                    <h4 class="fw-bold mb-0 pet-title">Bento</h4>
+                                    <button class="btn btn-edit-pet rounded-pill" data-bs-toggle="modal"
+                                        data-bs-target="#editarModal">Editar</button>
+                                </div>
+
+                                <div class="pet-info mb-1">Beagle • 4 anos</div>
+                                <div class="pet-info mb-4">12kg</div>
+
+                                <div class="d-flex gap-2 mt-auto align-items-center">
+                                    <button class="btn btn-agendar w-100 rounded-pill" data-bs-toggle="modal"
+                                        data-bs-target="#agendarModal">Agendar serviço</button>
+                                    <button class="btn btn-close-pet rounded-circle"><span>×</span></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="pet-card p-3 d-flex flex-column h-100">
+                                <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&q=80&w=400"
+                                    alt="Luna" class="pet-img mb-3">
+
+                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                    <h4 class="fw-bold mb-0 pet-title">Luna</h4>
+                                    <button class="btn btn-edit-pet rounded-pill" data-bs-toggle="modal"
+                                        data-bs-target="#editarModal">Editar</button>
+                                </div>
+
+                                <div class="pet-info mb-1">Maltês • 2 anos</div>
+                                <div class="pet-info mb-4">4kg</div>
+
+                                <div class="d-flex gap-2 mt-auto align-items-center">
+                                    <button class="btn btn-agendar w-100 rounded-pill" data-bs-toggle="modal"
+                                        data-bs-target="#agendarModal">Agendar serviço</button>
+                                    <button class="btn btn-close-pet rounded-circle"><span>×</span></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4">
+                            <div class="pet-card p-3 d-flex flex-column h-100">
+                                <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&q=80&w=400"
+                                    alt="Novo pet" class="pet-img mb-3">
+
+                                <div class="d-flex justify-content-between align-items-center mb-1">
+                                    <h4 class="fw-bold mb-0 pet-title">Novo pet</h4>
+                                    <button class="btn btn-edit-pet rounded-pill" data-bs-toggle="modal"
+                                        data-bs-target="#editarModal">Editar</button>
+                                </div>
+
+                                <div class="pet-info mb-1">—</div>
+                                <div class="pet-info mb-4">&nbsp;</div>
+
+                                <div class="d-flex gap-2 mt-auto align-items-center">
+                                    <button class="btn btn-agendar w-100 rounded-pill" data-bs-toggle="modal"
+                                        data-bs-target="#agendarModal">Agendar serviço</button>
+                                    <button class="btn btn-close-pet rounded-circle"><span>×</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h5 class="fw-bold mb-3">Histórico de Agendamentos</h5>
+                    <div class="table-responsive bg-white rounded border">
+                        <table class="table table-striped align-middle mb-0 small text-center">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Pet</th>
+                                    <th>Serviço</th>
+                                    <th>Hora</th>
+                                    <th>Status</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>22/05/2026</td>
+                                    <td>Luna</td>
+                                    <td>Hidratação</td>
+                                    <td>10:30</td>
+                                    <td><span class="badge bg-warning text-dark">Em andamento</span></td>
+                                    <td><button
+                                            class="btn btn-sm text-danger p-0 border-0 bg-transparent">Cancelar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>22/05/2026</td>
+                                    <td>Bento</td>
+                                    <td>Banho + Tosa</td>
+                                    <td>09:00</td>
+                                    <td><span class="badge bg-success">Confirmado</span></td>
+                                    <td><button
+                                            class="btn btn-sm text-danger p-0 border-0 bg-transparent">Cancelar</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="agendarModal" tabindex="-1" aria-labelledby="agendarModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content custom-modal">
+                <div class="modal-header border-0 pb-0 px-4 pt-4">
+                    <h4 class="modal-title" id="agendarModalLabel" style="font-family: serif; color: #4a5c53;">Agendar —
+                        Bento</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-4 pt-4 pb-4">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label form-label-custom">SERVIÇO</label>
+                            <select class="form-select custom-input">
+                                <option>Banho — R$ 80</option>
+                                <option>Tosa — R$ 100</option>
+                                <option>Banho + Tosa — R$ 160</option>
+                                <option>Hidratação — R$ 60</option>
+                            </select>
+                        </div>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label form-label-custom">DATA</label>
+                                <input type="date" class="form-control custom-input" value="2026-05-26">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label form-label-custom">HORA</label>
+                                <input type="time" class="form-control custom-input" value="10:00">
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label form-label-custom">OBSERVAÇÕES</label>
+                            <textarea class="form-control custom-input" rows="3"></textarea>
+                        </div>
+                        <div class="d-flex justify-content-end gap-3 mt-4">
+                            <button type="button" class="btn btn-custom-cancel rounded-pill"
+                                data-bs-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-agendar rounded-pill px-4">Confirmar
+                                agendamento</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="editarModal" tabindex="-1" aria-labelledby="editarModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content custom-modal">
+                <div class="modal-header border-0 pb-0 px-4 pt-4">
+                    <h4 class="modal-title" id="editarModalLabel" style="font-family: serif; color: #4a5c53;">Editar
+                        Luna
+                    </h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-4 pt-4 pb-4">
+                    <form>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label form-label-custom">NOME</label>
+                                <input type="text" class="form-control custom-input" value="Luna">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label form-label-custom">RAÇA</label>
+                                <input type="text" class="form-control custom-input" value="Maltês">
+                            </div>
+                        </div>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label form-label-custom">IDADE</label>
+                                <input type="text" class="form-control custom-input" value="2 anos">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label form-label-custom">PESO</label>
+                                <input type="text" class="form-control custom-input" value="4kg">
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label form-label-custom">OBSERVAÇÕES</label>
+                            <textarea class="form-control custom-input" rows="3">Adora hidratação.</textarea>
+                        </div>
+                        <div class="d-flex justify-content-end gap-3 mt-4">
+                            <button type="button" class="btn btn-custom-cancel rounded-pill"
+                                data-bs-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-salvar-edit rounded-pill px-4">Salvar
+                                alterações</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="modalEditarTutor" tabindex="-1" aria-labelledby="modalEditarTutorLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content custom-modal">
+                <div class="modal-header border-0 pb-0 px-4 pt-4">
+                    <h4 class="modal-title" id="modalEditarTutorLabel" style="font-family: serif; color: #4a5c53;">
+                        Editar Ricardo Silva</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-4 pt-4 pb-4">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label form-label-custom">NOME</label>
+                            <input type="text" class="form-control custom-input" value="Ricardo Silva">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label form-label-custom">E-MAIL</label>
+                            <input type="email" class="form-control custom-input" value="ricardo@email.com">
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label form-label-custom">TELEFONE</label>
+                            <input type="text" class="form-control custom-input" value="(11) 99876-5432">
+                        </div>
+
+                        <div class="d-flex justify-content-end gap-3 mt-4">
+                            <button type="button" class="btn btn-custom-cancel rounded-pill"
+                                data-bs-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-salvar-edit rounded-pill px-5">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
